@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love You ❤️</title>
+
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        img {
+            margin-top: 30px;
+            height: 300px;
+            border: 3px dashed black;
+            background-color: white;
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 24px;
+            animation: float 3s linear forwards;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-300px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>I Love You Forever ❤️</h1>
+<img src="LOVEYOU.webp" alt="Love Image">
+
+<script>
+    function createHeart() {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = window.innerHeight + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+
+    // Continuous heart bloom
+    setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine 💝</title>
+
+    <style>
+        * {
+            background-color: pink;
+        }
+
+        .one {
+            height: 220px;
+            width: 600px;
+            background-color: palevioletred;
+            border: 2px solid white;
+            text-align: center;
+            margin: auto;
+            margin-top: 15%;
+            position: relative;
+        }
+
+        h1 {
+            background-color: palevioletred;
+        }
+
+        button {
+            background-color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* YES button */
+        .yes {
+            font-size: 22px;
+            padding: 12px 30px;
+        }
+
+        /* NO button */
+        .no {
+            position: absolute;
+            font-size: 16px;
+            padding: 8px 20px;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="one">
+    <h1>Will you be my Valentine? 💘</h1>
+    <br>
+    <button class="yes" id="yesBtn">Yes</button>
+    <button class="no" id="noBtn">No</button>
+</div>
+
+<script>
+    let yesBtn = document.getElementById("yesBtn");
+    let noBtn = document.getElementById("noBtn");
+    let box = document.querySelector(".one");
+
+    // NO button runs away
+    noBtn.addEventListener("mouseover", function () {
+        let maxX = box.clientWidth - noBtn.offsetWidth;
+        let maxY = box.clientHeight - noBtn.offsetHeight;
+
+        let x = Math.random() * maxX;
+        let y = Math.random() * maxY;
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+
+    // YES button → open new page
+    yesBtn.onclick = function () {
+        window.location.href = "love.html";
+    };
+</script>
+
+</body>
+</html>
